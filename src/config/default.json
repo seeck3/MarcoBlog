@@ -16,6 +16,12 @@
           "Created Mutations for data related to users’ portfolios",
           "Involved in graphQL server, created model, resolver, and schema to interact with client-side",
           "Generated code-gen for typescript graphQL server-side and client-side",
+          "Built graphql server as node package",
+          "Built React Storybook of multiple react components",
+          "Export mock data and mock schemas as in node package from graphql server",
+          "Built Docker containers, improving developer workflow",
+          "Created User Managements UI dashboard",
+          "Created graphql resolvers, schemas and data sources, so that can communicate with Openshift APIs",
           "Used github for version control"
         ]
       }

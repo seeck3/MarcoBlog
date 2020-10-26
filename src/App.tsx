@@ -10,7 +10,7 @@ import Container from './Components/Layout/Container';
 // Type Def
 
 function App() {
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(0);
   return (
     <Provider store={store}>
       <React.Fragment>

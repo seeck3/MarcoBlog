@@ -1,25 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import {
-  makeStyles,
-  Theme,
-  withStyles,
-  createStyles,
-  TableCell,
-} from '@material-ui/core';
-import request from 'request';
-import github from '../../config/default.json';
-import { GitHubProps } from '../type';
+import React from 'react';
+import { makeStyles } from '@material-ui/core';
 // Components
 import TableTitle from './TableTitle';
 import TableBodyContainer from './TableBodyContainer';
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 500,
-  },
-});
 
 const GitHub = () => {
   return (
@@ -29,7 +12,5 @@ const GitHub = () => {
     </React.Fragment>
   );
 };
-
-GitHub.propTypes = {};
 
 export default GitHub;
