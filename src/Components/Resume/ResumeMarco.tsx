@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import {
   makeStyles,
@@ -14,7 +13,6 @@ import imgs from '../../asset/icons/index';
 import resume from './resumeData';
 import WorkExperience from './WorkExperience';
 import Education from './Education';
-import GitHub from '../GitHub/GitHub';
 import TableBodyContainer from '../GitHub/TableBodyContainer';
 const useStyles = makeStyles({
   boxContainer: {},
@@ -49,7 +47,7 @@ const ResumeMarco = () => {
         <Divider />
         <ExpansionPanelDetails>
           {icons.map((i) => (
-            <img className={classes.imgBox} src={i} />
+            <img alt={i} className={classes.imgBox} src={i} />
           ))}
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -82,7 +80,5 @@ const ResumeMarco = () => {
     </div>
   );
 };
-
-ResumeMarco.propTypes = {};
 
 export default ResumeMarco;

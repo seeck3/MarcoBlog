@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import {
   makeStyles,
@@ -65,7 +64,5 @@ const WorkExperience = ({ experiences }: Props) => {
     </div>
   );
 };
-
-WorkExperience.propTypes = {};
 
 export default WorkExperience;

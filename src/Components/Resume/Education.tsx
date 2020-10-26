@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import {
   makeStyles,
@@ -7,13 +6,9 @@ import {
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Divider,
 } from '@material-ui/core';
-import { ExpandMore, FiberManualRecord } from '@material-ui/icons';
+import { ExpandMore } from '@material-ui/icons';
 
 import { Educations } from '../type';
 
@@ -56,7 +51,5 @@ const Education = ({ educations }: Props) => {
     </div>
   );
 };
-
-Education.propTypes = {};
 
 export default Education;

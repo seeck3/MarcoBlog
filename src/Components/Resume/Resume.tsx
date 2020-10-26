@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 
 import ResumeLink from './ResumeLink';
 import ResumeMarco from './ResumeMarco';
@@ -12,7 +11,5 @@ const Resume = () => {
     </Fragment>
   );
 };
-
-Resume.propTypes = {};
 
 export default Resume;

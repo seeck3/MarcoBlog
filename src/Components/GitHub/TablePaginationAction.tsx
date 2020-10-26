@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import React from 'react';
 import {
   useTheme,
   createStyles,
   makeStyles,
   Theme,
-  TablePagination,
   IconButton,
 } from '@material-ui/core';
 import {
@@ -107,7 +104,5 @@ const TablePaginationAction = ({
     </div>
   );
 };
-
-TablePaginationAction.propTypes = {};
 
 export default TablePaginationAction;

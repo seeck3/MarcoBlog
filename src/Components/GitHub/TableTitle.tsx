@@ -1,34 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import clsx from 'clsx';
 import {
-  useTheme,
   createStyles,
   makeStyles,
   Theme,
-  TableContainer,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableFooter,
-  TablePagination,
-  Paper,
-  IconButton,
-  lighten,
   Toolbar,
   Typography,
-  Tooltip,
 } from '@material-ui/core';
-import {
-  LastPage,
-  FirstPage,
-  KeyboardArrowLeft,
-  KeyboardArrowRight,
-  Delete,
-  FilterList,
-} from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -58,7 +36,5 @@ const TableTitle = () => {
     </Toolbar>
   );
 };
-
-TableTitle.propTypes = {};
 
 export default TableTitle;

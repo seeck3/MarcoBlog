@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Button, Menu, MenuItem, makeStyles, Link } from '@material-ui/core';
 
@@ -51,7 +50,5 @@ const ResumeLink = () => {
     </div>
   );
 };
-
-ResumeLink.propTypes = {};
 
 export default ResumeLink;
