@@ -1,18 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import {
   AppBar,
   Toolbar,
-  IconButton,
-  Button,
   Typography,
   makeStyles,
   Tabs,
   Tab,
-  Box,
 } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
 
 // Type Def
 import { HeaderProps } from '../type';
@@ -73,7 +68,5 @@ function a11yProps(index: number) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
-
-Header.propTypes = {};
 
 export default Header;

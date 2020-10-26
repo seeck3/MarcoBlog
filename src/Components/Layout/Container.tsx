@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles, Theme, Typography, Box } from '@material-ui/core';
-import classes from '*.module.css';
 
 // type def
-import { ContainerProps, GitHubProps } from '../type';
+import { ContainerProps } from '../type';
 import AboutMe from '../AboutMe/AboutMe';
 import GitHub from '../GitHub/GitHub';
 import Resume from '../Resume/Resume';
@@ -50,7 +49,5 @@ const Container = ({ value }: ContainerProps) => {
     </div>
   );
 };
-
-Container.propTypes = {};
 
 export default Container;

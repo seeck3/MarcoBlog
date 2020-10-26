@@ -50,7 +50,7 @@ const TableBodyContainer = ({ getRepos, repos }: Props) => {
 
   useEffect(() => {
     getRepos();
-  }, []);
+  }, [getRepos]);
 
   if (repos.length > 0) {
     const handleChangeRowsPerPage = (
@@ -129,8 +129,6 @@ const TableBodyContainer = ({ getRepos, repos }: Props) => {
   }
   return null;
 };
-
-TableBodyContainer.propTypes = {};
 
 const mapStateToProps = (state: any) => ({
   repos: state.github.repos,

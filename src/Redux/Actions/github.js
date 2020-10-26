@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import request from 'request';
 import github from '../../config/default.json';
 
