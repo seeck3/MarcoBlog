@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      alignItems: 'center',
     },
     fullImage: {
       maxHeight: '80vh',
@@ -35,9 +34,6 @@ const useStyles = makeStyles((theme) =>
       fontSize: '1rem',
       fontWeight: 'bold',
     },
-    workContainer: {
-      justifyContent: 'space-between',
-    },
   })
 );
 
@@ -47,7 +43,7 @@ const AboutMe = () => {
 
   return (
     <Fragment>
-      <Grid className={classes.root} container spacing={3}>
+      <Grid alignItems='center' className={classes.root} container spacing={3}>
         <Grid item xs={9}>
           <Grid container spacing={3}>
             <Grid item xs={4}>
@@ -62,7 +58,7 @@ const AboutMe = () => {
                   Work Experience
                 </Typography>
                 {resume.work_experience.map((work) => (
-                  <Grid className={classes.workContainer} container>
+                  <Grid justify='space-between' container>
                     <Typography component='span'>
                       {work.company.name}{' '}
                     </Typography>
