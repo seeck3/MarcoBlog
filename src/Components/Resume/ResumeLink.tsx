@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Menu, MenuItem, makeStyles, Link } from '@material-ui/core';
+import { resumeDoc, resumePdf } from '../../asset/resumes';
 
 const useStyles = makeStyles({
   container: {
@@ -37,12 +38,12 @@ const ResumeLink = () => {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>
-          <Link href='../../asset/resumes/Marco-Resume-09-IT.pdf' download>
+          <Link href={resumePdf} download>
             Download as PDF
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link href='../../asset/resumes/Marco-Resume-09-IT.docx' download>
+          <Link href={resumeDoc} download>
             Download as DOC
           </Link>
         </MenuItem>

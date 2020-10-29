@@ -3,6 +3,7 @@ import React, { Fragment, useState } from 'react';
 import {
   createStyles,
   Dialog,
+  Divider,
   Grid,
   GridListTileBar,
   makeStyles,
@@ -34,6 +35,9 @@ const useStyles = makeStyles((theme) =>
       fontSize: '1rem',
       fontWeight: 'bold',
     },
+    divider: {
+      margin: theme.spacing(1, 0),
+    },
   })
 );
 
@@ -54,11 +58,16 @@ const AboutMe = () => {
                 <Typography component='div'>
                   <TechnicalSkills width={40} height={40} />
                 </Typography>
+                <Divider className={classes.divider} />
                 <Typography className={classes.title} variant='button'>
                   Work Experience
                 </Typography>
-                {resume.work_experience.map((work) => (
-                  <Grid justify='space-between' container>
+                {resume.work_experiences.map((work) => (
+                  <Grid
+                    key={work.company.name}
+                    justify='space-between'
+                    container
+                  >
                     <Typography component='span'>
                       {work.company.name}{' '}
                     </Typography>
@@ -67,6 +76,19 @@ const AboutMe = () => {
                     </Typography>
                   </Grid>
                 ))}
+                <Divider className={classes.divider} />
+                <Typography className={classes.title} variant='button'>
+                  Education
+                </Typography>
+                {resume.educations.map((edu) => (
+                  <Grid key={edu.school.name} justify='space-between' container>
+                    <Typography component='span'>{edu.school.name} </Typography>
+                    <Typography component='span'>
+                      {edu.school.startAt + ' ~ ' + edu.school.endAt}
+                    </Typography>
+                  </Grid>
+                ))}
+                <Divider className={classes.divider} />
               </Paper>
             </Grid>
             <Grid item xs={8}>
