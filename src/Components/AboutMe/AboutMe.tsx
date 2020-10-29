@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from 'react';
 
 import {
+  Card,
+  CardMedia,
   createStyles,
   Dialog,
-  Divider,
   Grid,
   GridListTileBar,
   makeStyles,
@@ -12,14 +13,18 @@ import {
 } from '@material-ui/core';
 import { images } from '../../asset/images';
 import { GridImages } from './GridImages';
-import { TechnicalSkills } from '../TechnicalSkills/TechnicalSkills';
-import resume from '../Resume/resumeData';
 import { Maybe, SelectedImg } from '../type';
+import { LeftColumn } from './LeftColumn';
+import { coffee_coding } from '../../asset/aboutme';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+    },
+    cardImg: {
+      height: '100%',
+      width: '100%',
     },
     fullImage: {
       maxHeight: '80vh',
@@ -31,12 +36,14 @@ const useStyles = makeStyles((theme) =>
     imageContainer: {
       paddingRight: 0,
     },
-    title: {
-      fontSize: '1rem',
-      fontWeight: 'bold',
-    },
-    divider: {
-      margin: theme.spacing(1, 0),
+    paragraph: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: theme.spacing(2),
+      height: '20vh',
+      fontFamily: 'Impact, Charcoal, sans-serif',
+      fontSize: 24,
     },
   })
 );
@@ -52,50 +59,36 @@ const AboutMe = () => {
           <Grid container spacing={3}>
             <Grid item xs={4}>
               <Paper className={classes.paper} elevation={3}>
-                <Typography className={classes.title} variant='button'>
-                  Technical Skills
-                </Typography>
-                <Typography component='div'>
-                  <TechnicalSkills width={40} height={40} />
-                </Typography>
-                <Divider className={classes.divider} />
-                <Typography className={classes.title} variant='button'>
-                  Work Experience
-                </Typography>
-                {resume.work_experiences.map((work) => (
-                  <Grid
-                    key={work.company.name}
-                    justify='space-between'
-                    container
-                  >
-                    <Typography component='span'>
-                      {work.company.name}{' '}
-                    </Typography>
-                    <Typography component='span'>
-                      {work.company.startAt + ' ~ ' + work.company.endAt}
-                    </Typography>
-                  </Grid>
-                ))}
-                <Divider className={classes.divider} />
-                <Typography className={classes.title} variant='button'>
-                  Education
-                </Typography>
-                {resume.educations.map((edu) => (
-                  <Grid key={edu.school.name} justify='space-between' container>
-                    <Typography component='span'>{edu.school.name} </Typography>
-                    <Typography component='span'>
-                      {edu.school.startAt + ' ~ ' + edu.school.endAt}
-                    </Typography>
-                  </Grid>
-                ))}
-                <Divider className={classes.divider} />
+                <LeftColumn />
               </Paper>
             </Grid>
             <Grid item xs={8}>
               <Paper className={classes.paper} elevation={3}>
-                <Typography variant='body1'>
-                  {`I am a determined developer with a particular passion for solving everyday problems in effective ways. Most recently, I joined the AI team as full stack web developer using MEAN stack. I am dedicated to constantly learning and looking for an opportunity where I can make a meaningful contribution to a team.`}
-                </Typography>
+                <Grid container spacing={3}>
+                  <Grid item xs={6}>
+                    <Paper elevation={1}>
+                      <Typography className={classes.paragraph} variant='body1'>
+                        Loving and Enjoying My Coding Life
+                      </Typography>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Card className={classes.cardImg}>
+                      <CardMedia
+                        classes={{ root: classes.cardImg }}
+                        image={coffee_coding}
+                        title='coffee and coding'
+                      />
+                    </Card>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Paper elevation={1}>
+                      <Typography className={classes.paragraph} variant='body1'>
+                        Fast Paced Environment
+                      </Typography>
+                    </Paper>
+                  </Grid>
+                </Grid>
               </Paper>
             </Grid>
           </Grid>
