@@ -1,7 +1,7 @@
 const resume = {
   summary:
     'I am a determined developer with a particular passion for solving everyday problems in effective ways. I am dedicated to constantly learning and looking for an opportunity where I can make a meaningful contribution to a team.',
-  work_experience: [
+  work_experiences: [
     {
       company: {
         name: 'Kalani Consulting, Inc',
@@ -45,7 +45,7 @@ const resume = {
       },
     },
   ],
-  education: [
+  educations: [
     {
       school: {
         name: 'Coding Dojo',
@@ -60,11 +60,19 @@ const resume = {
         name: 'Lake Braddock Secondary School',
         description: 'HighSchool Diploma',
         startAt: null,
-        endAt: null,
+        endAt: '2008',
       },
     },
   ],
-  certification: [],
+  certifications: [
+    {
+      certification: {
+        name: 'MEAN Stack',
+        description:
+          'certifiacation from coding bootcamp that I completed MEAN fullstack course',
+      },
+    },
+  ],
 };
 
 export default resume;

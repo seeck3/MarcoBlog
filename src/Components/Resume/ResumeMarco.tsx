@@ -64,7 +64,7 @@ const ResumeMarco = () => {
         </ExpansionPanelSummary>
         <Divider />
         <ExpansionPanelDetails>
-          <WorkExperience experiences={resume.work_experience} />
+          <WorkExperience experiences={resume.work_experiences} />
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel>
@@ -72,7 +72,7 @@ const ResumeMarco = () => {
           <Typography className={classes.heading}>Education</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Education educations={resume.education} />
+          <Education educations={resume.educations} />
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
