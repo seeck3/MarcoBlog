@@ -84,7 +84,7 @@ const AboutMe = () => {
                   <Grid item xs={12}>
                     <Paper elevation={1}>
                       <Typography className={classes.paragraph} variant='body1'>
-                        Fast Paced Environment
+                        A Beautiful Solution
                       </Typography>
                     </Paper>
                   </Grid>
