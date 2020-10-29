@@ -26,7 +26,6 @@ const useStyles = makeStyles({
     fontSize: 18,
   },
 });
-console.log('imgs', imgs);
 
 const ResumeMarco = () => {
   const classes = useStyles();
