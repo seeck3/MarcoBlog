@@ -6,6 +6,7 @@ import { ContainerProps } from '../type';
 import AboutMe from '../AboutMe/AboutMe';
 import GitHub from '../GitHub/GitHub';
 import Resume from '../Resume/Resume';
+import { Portfolio } from '../Portfolio/Portfolio';
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -41,7 +42,7 @@ const Container = ({ value }: ContainerProps) => {
         <Resume />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Portfolio />
       </TabPanel>
       <TabPanel value={value} index={3}>
         <GitHub />

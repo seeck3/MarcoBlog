@@ -7,6 +7,7 @@ import {
   makeStyles,
   Tabs,
   Tab,
+  Grid,
 } from '@material-ui/core';
 
 // Type Def
@@ -20,10 +21,13 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    // fontSize: '24px',
   },
   tabContainer: {
     flexGrow: 4,
+  },
+  alignItems: {
+    alignItems: 'center',
   },
 }));
 
@@ -35,28 +39,56 @@ const Header = ({ value, setValue }: HeaderProps) => {
   };
   return (
     <AppBar position='static'>
-      <Toolbar>
-        <Typography variant='h6' className={classes.title}>
-          Marco's Blog
-        </Typography>
-        <Tabs
-          className={classes.tabContainer}
-          value={value}
-          onChange={handleChange}
-          aria-label='simple tabs example'
-        >
-          <Tab
-            label={
-              <Typography variant='button' className={classes.title}>
-                About Me
-              </Typography>
-            }
-            {...a11yProps(0)}
-          />
-          <Tab label='Resume' {...a11yProps(1)} />
-          <Tab label='Item Three' {...a11yProps(2)} />
-          <Tab label='GitHub' {...a11yProps(3)} />
-        </Tabs>
+      <Toolbar className={classes.root}>
+        <Grid classes={{ container: classes.alignItems }} container>
+          <Grid item xs={2}>
+            <Typography variant='h6' className={classes.title}>
+              Marco's Blog
+            </Typography>
+          </Grid>
+
+          <Grid item xs={10}>
+            <Tabs
+              className={classes.tabContainer}
+              value={value}
+              onChange={handleChange}
+              aria-label='simple tabs example'
+            >
+              <Tab
+                label={
+                  <Typography variant='button' className={classes.title}>
+                    About Me
+                  </Typography>
+                }
+                {...a11yProps(0)}
+              />
+              <Tab
+                label={
+                  <Typography variant='button' className={classes.title}>
+                    Resume
+                  </Typography>
+                }
+                {...a11yProps(1)}
+              />
+              <Tab
+                label={
+                  <Typography variant='button' className={classes.title}>
+                    Portfolio
+                  </Typography>
+                }
+                {...a11yProps(2)}
+              />
+              <Tab
+                label={
+                  <Typography variant='button' className={classes.title}>
+                    Github
+                  </Typography>
+                }
+                {...a11yProps(3)}
+              />
+            </Tabs>
+          </Grid>
+        </Grid>
       </Toolbar>
     </AppBar>
   );

@@ -43,7 +43,6 @@ const StyledTableCell = withStyles((theme: Theme) =>
 )(TableCell);
 
 const TableBodyContainer = ({ getRepos, repos }: Props) => {
-  console.log('repos', repos);
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
