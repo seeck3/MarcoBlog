@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "heroku-start": "react-scripts --max_old_space_size=920 start",
+    "heroku-start": "node server.js",
     "heroku-postbuild": "react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -57,5 +57,8 @@
   "engines": {
     "node": "10.15.3",
     "npm": "6.13.4"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
   }
 }
