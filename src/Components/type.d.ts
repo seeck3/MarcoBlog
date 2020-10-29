@@ -43,3 +43,20 @@ export type Experience = {
   startAt: string;
   endAt: string;
 };
+
+export type SelectedImg = {
+  img: string;
+  title: string;
+  author: string;
+  featured: boolean;
+};
+
+export type GridImagesProps = {
+  setSelectedImg: React.Dispatch<React.SetStateAction<Maybe<SelectedImg>>>;
+  images: SelectedImg[];
+};
+
+export type TechnicalSkillsProps = {
+  height: number;
+  width: number;
+};

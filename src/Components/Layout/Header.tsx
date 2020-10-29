@@ -62,9 +62,30 @@ const Header = ({ value, setValue }: HeaderProps) => {
                 }
                 {...a11yProps(0)}
               />
-              <Tab label='Resume' {...a11yProps(1)} />
-              <Tab label='Item Three' {...a11yProps(2)} />
-              <Tab label='GitHub' {...a11yProps(3)} />
+              <Tab
+                label={
+                  <Typography variant='button' className={classes.title}>
+                    Resume
+                  </Typography>
+                }
+                {...a11yProps(1)}
+              />
+              <Tab
+                label={
+                  <Typography variant='button' className={classes.title}>
+                    Portfolio
+                  </Typography>
+                }
+                {...a11yProps(2)}
+              />
+              <Tab
+                label={
+                  <Typography variant='button' className={classes.title}>
+                    Github
+                  </Typography>
+                }
+                {...a11yProps(3)}
+              />
             </Tabs>
           </Grid>
         </Grid>

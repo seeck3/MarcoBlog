@@ -9,11 +9,12 @@ import {
   ExpansionPanelDetails,
 } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
-import imgs from '../../asset/icons/index';
+
 import resume from './resumeData';
 import WorkExperience from './WorkExperience';
 import Education from './Education';
 import TableBodyContainer from '../GitHub/TableBodyContainer';
+import { TechnicalSkills } from '../TechnicalSkills/TechnicalSkills';
 const useStyles = makeStyles({
   boxContainer: {},
   imgBox: {
@@ -29,7 +30,7 @@ const useStyles = makeStyles({
 
 const ResumeMarco = () => {
   const classes = useStyles();
-  const icons = Object.values(imgs);
+
   return (
     <div>
       <ExpansionPanel>
@@ -45,9 +46,7 @@ const ResumeMarco = () => {
         </ExpansionPanelSummary>
         <Divider />
         <ExpansionPanelDetails>
-          {icons.map((i) => (
-            <img alt={i} className={classes.imgBox} src={i} />
-          ))}
+          <TechnicalSkills width={50} height={50} />
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel>
