@@ -15,7 +15,7 @@ import { images } from '../../asset/images';
 import { GridImages } from './GridImages';
 import { Maybe, SelectedImg } from '../type';
 import { LeftColumn } from './LeftColumn';
-import { clean_code, coffee_coding, sunflower } from '../../asset/aboutme';
+import { clean_code, coffee_coding } from '../../asset/aboutme';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
