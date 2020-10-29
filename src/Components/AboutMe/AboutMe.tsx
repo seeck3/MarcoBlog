@@ -15,7 +15,7 @@ import { images } from '../../asset/images';
 import { GridImages } from './GridImages';
 import { Maybe, SelectedImg } from '../type';
 import { LeftColumn } from './LeftColumn';
-import { coffee_coding } from '../../asset/aboutme';
+import { clean_code, coffee_coding, sunflower } from '../../asset/aboutme';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) =>
       justifyContent: 'center',
       alignItems: 'center',
       padding: theme.spacing(2),
-      height: '20vh',
+      height: '24vh',
       fontFamily: 'Impact, Charcoal, sans-serif',
       fontSize: 24,
     },
@@ -81,10 +81,28 @@ const AboutMe = () => {
                       />
                     </Card>
                   </Grid>
+
                   <Grid item xs={12}>
                     <Paper elevation={1}>
                       <Typography className={classes.paragraph} variant='body1'>
                         A Beautiful Solution
+                      </Typography>
+                    </Paper>
+                  </Grid>
+
+                  <Grid item xs={6}>
+                    <Card className={classes.cardImg}>
+                      <CardMedia
+                        classes={{ root: classes.cardImg }}
+                        image={clean_code}
+                        title='coffee and coding'
+                      />
+                    </Card>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Paper elevation={1}>
+                      <Typography className={classes.paragraph} variant='body1'>
+                        Clean and Easy Readable Code
                       </Typography>
                     </Paper>
                   </Grid>

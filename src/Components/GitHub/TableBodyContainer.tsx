@@ -14,6 +14,7 @@ import {
   TablePagination,
   Paper,
   Link,
+  CircularProgress,
 } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { getRepos } from '../../Redux/Actions/github';
@@ -24,6 +25,7 @@ import TablePaginationAction from './TablePaginationAction';
 type Props = {
   getRepos: any;
   repos: GitHubProps[];
+  loading: boolean;
 };
 
 const useStyles = makeStyles({
@@ -42,7 +44,7 @@ const StyledTableCell = withStyles((theme: Theme) =>
   })
 )(TableCell);
 
-const TableBodyContainer = ({ getRepos, repos }: Props) => {
+const TableBodyContainer = ({ getRepos, repos, loading }: Props) => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -66,6 +68,12 @@ const TableBodyContainer = ({ getRepos, repos }: Props) => {
     };
     const emptyRows =
       rowsPerPage - Math.min(rowsPerPage, repos.length - page * rowsPerPage);
+    if (loading)
+      return (
+        <div style={{ textAlign: 'center' }}>
+          <CircularProgress size={150} />
+        </div>
+      );
 
     return (
       <TableContainer component={Paper}>
@@ -131,6 +139,7 @@ const TableBodyContainer = ({ getRepos, repos }: Props) => {
 
 const mapStateToProps = (state: any) => ({
   repos: state.github.repos,
+  loading: state.github.loading,
 });
 
 export default connect(mapStateToProps, { getRepos })(TableBodyContainer);
