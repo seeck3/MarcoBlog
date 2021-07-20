@@ -2,14 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import TableTitle from '../../GeneralComponents/TableTitle';
 import { Activity } from './Activity';
-
+const clientID = process.env.REACT_APP_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
+const refreshToken = process.env.REACT_APP_REFRESH_TOKEN;
+const auth_link = process.env.REACT_APP_AUTH_LINK as string;
+const api_url = process.env.REACT_APP_API_URL as string;
 export const Strava = () => {
   const [allActivities, setAllActivites] = React.useState<any>([]);
 
-  const clientID = '68540';
-  const clientSecret = 'cc1c76a813c3c7da77db9cd88e39584267b8618d';
-  const refreshToken = 'b284334b3cbba6e6a24284d4a394419e4e26ce33';
-  const auth_link = 'https://www.strava.com/oauth/token';
   React.useEffect(() => {
     const params = JSON.stringify({
       client_id: clientID,
@@ -28,14 +28,11 @@ export const Strava = () => {
     };
     const getAllActivities = async () => {
       const token = await getAuth();
-      const result = axios.get(
-        'https://www.strava.com/api/v3/athlete/activities',
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const result = axios.get(`${api_url}/athlete/activities`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const { data } = await result;
       setAllActivites(data);
     };
