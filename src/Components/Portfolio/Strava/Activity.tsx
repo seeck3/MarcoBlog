@@ -73,7 +73,11 @@ export const Activity = ({ activity }: ActivityProps) => {
             </Typography>
           </div>
         </div>
-        <Button onClick={() => setShowMap(!showMap)}>
+        <Button
+          color='primary'
+          variant='outlined'
+          onClick={() => setShowMap(!showMap)}
+        >
           {showMap ? 'Hide Map' : 'Show Map'}
         </Button>
         {showMap && <Map {...polyline} />}

@@ -1,5 +1,4 @@
 import request from 'request';
-import github from '../../config/default.json';
 
 import { GET_GITHUB } from '../types';
 
