@@ -5,14 +5,12 @@ import {
   Toolbar,
   Typography,
   makeStyles,
-  Tabs,
-  Tab,
   Grid,
+  Box,
+  Button,
 } from '@material-ui/core';
 
-// Type Def
-import { HeaderProps } from '../type';
-
+import { NavLink } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -20,85 +18,88 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  title: {
-    // fontSize: '24px',
+  linkButton: {
+    textDecoration: 'none',
+    // color: 'white',
+  },
+  active: {
+    '& button': {
+      // background: 'black',
+      opacity: '0.5',
+    },
+  },
+  buttonText: {
+    color: 'white',
   },
   tabContainer: {
-    flexGrow: 4,
+    justifyContent: 'space-evenly',
+    display: 'flex',
   },
   alignItems: {
     alignItems: 'center',
   },
 }));
 
-const Header = ({ value, setValue }: HeaderProps) => {
+const Header = () => {
   const classes = useStyles();
 
-  const handleChange = (event: any, newValue: number) => {
-    setValue(newValue);
-  };
   return (
     <AppBar position='static'>
       <Toolbar className={classes.root}>
         <Grid classes={{ container: classes.alignItems }} container>
           <Grid item xs={2}>
-            <Typography variant='h6' className={classes.title}>
-              Marco's Blog
-            </Typography>
+            <Typography variant='h6'>Marco's Blog</Typography>
           </Grid>
 
           <Grid item xs={10}>
-            <Tabs
+            <Box
               className={classes.tabContainer}
-              value={value}
-              onChange={handleChange}
-              aria-label='simple tabs example'
+              aria-label='simple Box example'
             >
-              <Tab
-                label={
-                  <Typography variant='button' className={classes.title}>
-                    About Me
-                  </Typography>
-                }
-                {...a11yProps(0)}
-              />
-              <Tab
-                label={
-                  <Typography variant='button' className={classes.title}>
-                    Resume
-                  </Typography>
-                }
-                {...a11yProps(1)}
-              />
-              <Tab
-                label={
-                  <Typography variant='button' className={classes.title}>
-                    Portfolio
-                  </Typography>
-                }
-                {...a11yProps(2)}
-              />
-              <Tab
-                label={
-                  <Typography variant='button' className={classes.title}>
-                    Github
-                  </Typography>
-                }
-                {...a11yProps(3)}
-              />
-            </Tabs>
+              <NavLink
+                exact
+                to='/'
+                className={classes.linkButton}
+                activeClassName={classes.active}
+              >
+                <Button className={classes.buttonText}>
+                  <Typography variant='button'>About Me</Typography>
+                </Button>
+              </NavLink>
+              <NavLink
+                exact
+                to='/resume'
+                className={classes.linkButton}
+                activeClassName={classes.active}
+              >
+                <Button className={classes.buttonText}>
+                  <Typography variant='button'>resume</Typography>
+                </Button>
+              </NavLink>
+              <NavLink
+                to='/portfolio'
+                className={classes.linkButton}
+                activeClassName={classes.active}
+              >
+                <Button className={classes.buttonText}>
+                  <Typography variant='button'>portfolio</Typography>
+                </Button>
+              </NavLink>
+              <NavLink
+                to='/github'
+                className={classes.linkButton}
+                activeClassName={classes.active}
+              >
+                <Button className={classes.buttonText}>
+                  <Typography variant='button'>github</Typography>
+                </Button>
+              </NavLink>
+            </Box>
           </Grid>
         </Grid>
       </Toolbar>
     </AppBar>
   );
 };
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
 
 export default Header;

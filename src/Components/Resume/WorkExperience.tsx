@@ -1,11 +1,10 @@
 import React from 'react';
-
 import {
   makeStyles,
   Typography,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   List,
   ListItem,
   ListItemIcon,
@@ -37,20 +36,20 @@ const WorkExperience = ({ experiences }: Props) => {
   return (
     <div className={classes.container}>
       {experiences.map((work) => (
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+        <Accordion key={work.company.name}>
+          <AccordionSummary expandIcon={<ExpandMore />}>
             <div className={classes.title}>
               <Typography>{work.company.name} </Typography>
               <Typography>
                 {work.company.startAt + ' ~ ' + work.company.endAt}
               </Typography>
             </div>
-          </ExpansionPanelSummary>
+          </AccordionSummary>
           <Divider />
-          <ExpansionPanelDetails>
+          <AccordionDetails>
             <List>
               {work.company.experience.map((exp) => (
-                <ListItem>
+                <ListItem key={exp}>
                   <ListItemIcon>
                     <FiberManualRecord />
                   </ListItemIcon>
@@ -58,8 +57,8 @@ const WorkExperience = ({ experiences }: Props) => {
                 </ListItem>
               ))}
             </List>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          </AccordionDetails>
+        </Accordion>
       ))}
     </div>
   );

@@ -1,12 +1,11 @@
 import React from 'react';
 import { makeStyles, Theme, Typography, Box } from '@material-ui/core';
-
 // type def
-import { ContainerProps } from '../type';
 import AboutMe from '../AboutMe/AboutMe';
 import GitHub from '../GitHub/GitHub';
 import Resume from '../Resume/Resume';
 import { Portfolio } from '../Portfolio/Portfolio';
+import { Route, Switch } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -25,28 +24,38 @@ function TabPanel(props: any) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box p={3}>{children}</Box>}
+      <Box p={3}>{children}</Box>
     </Typography>
   );
 }
 
-const Container = ({ value }: ContainerProps) => {
+const Container = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
-      <TabPanel value={value} index={0}>
-        <AboutMe />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Resume />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Portfolio />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <GitHub />
-      </TabPanel>
+      <Switch>
+        <Route exact path='/'>
+          <TabPanel>
+            <AboutMe />
+          </TabPanel>
+        </Route>
+        <Route exact path='/resume'>
+          <TabPanel>
+            <Resume />
+          </TabPanel>
+        </Route>
+        <Route path='/portfolio'>
+          <TabPanel>
+            <Portfolio />
+          </TabPanel>
+        </Route>
+        <Route exact path='/github'>
+          <TabPanel>
+            <GitHub />
+          </TabPanel>
+        </Route>
+      </Switch>
     </div>
   );
 };

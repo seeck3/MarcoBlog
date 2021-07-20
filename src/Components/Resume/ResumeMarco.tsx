@@ -4,9 +4,9 @@ import {
   makeStyles,
   Typography,
   Divider,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 
@@ -33,48 +33,48 @@ const ResumeMarco = () => {
 
   return (
     <div>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMore />}>
           <Typography className={classes.heading}>Summary</Typography>
-        </ExpansionPanelSummary>
+        </AccordionSummary>
         <Divider />
-        <ExpansionPanelDetails>{resume.summary}</ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+        <AccordionDetails>{resume.summary}</AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMore />}>
           <Typography className={classes.heading}>Technical Skills</Typography>
-        </ExpansionPanelSummary>
+        </AccordionSummary>
         <Divider />
-        <ExpansionPanelDetails>
+        <AccordionDetails>
           <TechnicalSkills width={50} height={50} />
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMore />}>
           <Typography className={classes.heading}>Personal Project</Typography>
-        </ExpansionPanelSummary>
+        </AccordionSummary>
         <Divider />
-        <ExpansionPanelDetails>
+        <AccordionDetails>
           <TableBodyContainer />
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMore />}>
           <Typography className={classes.heading}>Experience</Typography>
-        </ExpansionPanelSummary>
+        </AccordionSummary>
         <Divider />
-        <ExpansionPanelDetails>
+        <AccordionDetails>
           <WorkExperience experiences={resume.work_experiences} />
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMore />}>
           <Typography className={classes.heading}>Education</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+        </AccordionSummary>
+        <AccordionDetails>
           <Education educations={resume.educations} />
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 };

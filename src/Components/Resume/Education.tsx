@@ -1,11 +1,10 @@
 import React from 'react';
-
 import {
   makeStyles,
   Typography,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   Divider,
 } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
@@ -32,8 +31,8 @@ const Education = ({ educations }: Props) => {
   return (
     <div className={classes.container}>
       {educations.map((edu) => (
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+        <Accordion key={edu.school.name}>
+          <AccordionSummary expandIcon={<ExpandMore />}>
             <div className={classes.title}>
               <Typography>{edu.school.name} </Typography>
               <Typography>
@@ -41,12 +40,12 @@ const Education = ({ educations }: Props) => {
                   (edu.school.endAt ? edu.school.endAt : '')}
               </Typography>
             </div>
-          </ExpansionPanelSummary>
+          </AccordionSummary>
           <Divider />
-          <ExpansionPanelDetails>
+          <AccordionDetails>
             <Typography>{edu.school.description}</Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          </AccordionDetails>
+        </Accordion>
       ))}
     </div>
   );

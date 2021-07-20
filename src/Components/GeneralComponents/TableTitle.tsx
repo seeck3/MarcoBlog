@@ -7,6 +7,7 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
+import { TableTitleProp } from '../type';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
-const TableTitle = () => {
+const TableTitle = ({ title }: TableTitleProp) => {
   const classes = useStyles();
 
   return (
@@ -31,7 +32,7 @@ const TableTitle = () => {
         id='tableTitle'
         component='div'
       >
-        My GitHub
+        {title}
       </Typography>
     </Toolbar>
   );

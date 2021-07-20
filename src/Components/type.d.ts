@@ -2,13 +2,9 @@ export as namespace Types;
 
 export type Maybe<T> = T | null;
 
-export type ContainerProps = {
-  value: number;
-};
-
 export type HeaderProps = {
   value: number;
-  setValue: (value: number) => void;
+  handleValue: (e: any, newValue: number) => void;
 };
 
 export type GitHubProps = {
@@ -59,4 +55,27 @@ export type GridImagesProps = {
 export type TechnicalSkillsProps = {
   height: number;
   width: number;
+};
+
+export type ActivityProps = {
+  activity: Activity;
+};
+
+export type Activity = {
+  map: Map;
+  name: string;
+  distance: number;
+  max_watts: number;
+  average_speed: number;
+  average_cadence: number;
+  total_elevation_gain: string;
+  weighted_average_watts: number;
+};
+
+export type Map = {
+  summary_polyline: string;
+};
+
+export type TableTitleProp = {
+  title: string;
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 import './App.css';
@@ -6,18 +6,19 @@ import './App.css';
 // Components
 import Header from './Components/Layout/Header';
 import Container from './Components/Layout/Container';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 // Type Def
 
 function App() {
-  const [value, setValue] = useState(0);
   return (
-    <Provider store={store}>
-      <React.Fragment>
-        <Header value={value} setValue={setValue} />
-        <Container value={value} />
-      </React.Fragment>
-    </Provider>
+    <Router>
+      <Provider store={store}>
+        <React.Fragment>
+          <Header />
+          <Container />
+        </React.Fragment>
+      </Provider>
+    </Router>
   );
 }
 

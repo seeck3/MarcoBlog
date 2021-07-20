@@ -79,9 +79,11 @@ const TableBodyContainer = ({ getRepos, repos, loading }: Props) => {
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label='custom pagination table'>
           <TableHead>
-            <StyledTableCell>Name</StyledTableCell>
-            <StyledTableCell>Description</StyledTableCell>
-            <StyledTableCell>Go to GitHub</StyledTableCell>
+            <TableRow>
+              <StyledTableCell>Name</StyledTableCell>
+              <StyledTableCell>Description</StyledTableCell>
+              <StyledTableCell>Go to GitHub</StyledTableCell>
+            </TableRow>
           </TableHead>
           <TableBody>
             {(rowsPerPage > 0
