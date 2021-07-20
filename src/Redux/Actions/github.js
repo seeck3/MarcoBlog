@@ -13,7 +13,6 @@ export const getRepos = () => async (dispatch) => {
     method: 'GET',
     headers: { 'user-agent': 'node.js' },
   };
-  console.log(`options`, options);
 
   request(options, (error, response, body) => {
     if (error) return [];
