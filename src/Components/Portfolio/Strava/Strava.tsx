@@ -2,11 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import TableTitle from '../../GeneralComponents/TableTitle';
 import { Activity } from './Activity';
-const clientID = process.env.REACT_APP_CLIENT_ID;
-const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
-const refreshToken = process.env.REACT_APP_REFRESH_TOKEN;
-const auth_link = process.env.REACT_APP_AUTH_LINK as string;
-const api_url = process.env.REACT_APP_API_URL as string;
+const clientID = process.env.REACT_APP_STRAVA_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_STRAVA_CLIENT_SECRET;
+const refreshToken = process.env.REACT_APP_STRAVA_REFRESH_TOKEN;
+const auth_link = process.env.REACT_APP_STRAVA_AUTH_LINK as string;
+const api_url = process.env.REACT_APP_STRAVA_API_URL as string;
 export const Strava = () => {
   const [allActivities, setAllActivites] = React.useState<any>([]);
 

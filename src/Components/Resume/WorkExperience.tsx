@@ -39,7 +39,9 @@ const WorkExperience = ({ experiences }: Props) => {
         <Accordion key={work.company.name}>
           <AccordionSummary expandIcon={<ExpandMore />}>
             <div className={classes.title}>
-              <Typography>{work.company.name} </Typography>
+              <Typography>
+                {work.company.name} - {work.company.title}
+              </Typography>
               <Typography>
                 {work.company.startAt + ' ~ ' + work.company.endAt}
               </Typography>

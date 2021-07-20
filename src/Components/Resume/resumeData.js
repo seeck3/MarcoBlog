@@ -7,6 +7,7 @@ const resume = {
         name: 'Acuity, Inc',
         startAt: 'Jan, 2020',
         endAt: 'present',
+        title: 'Lead Front-End Developer',
         experience: [
           'Worked with React.js, graphQL and node.js full stack development',
           'Refactored existing global header and built Portfolio app in global header with React Material UI components',
@@ -33,6 +34,7 @@ const resume = {
         name: 'UnitedSolutions, LLC',
         startAt: 'Feb, 2019',
         endAt: 'Dec, 2020',
+        title: 'Full-Stack Developer',
         experience: [
           'Worked with MEAN full stack development',
           'Angular 4/5/6/7',

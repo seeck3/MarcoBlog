@@ -38,6 +38,7 @@ export type Experience = {
   experience: string[];
   startAt: string;
   endAt: string;
+  title: string;
 };
 
 export type SelectedImg = {

@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import {
+  Card,
+  CardContent,
   createStyles,
   Divider,
   Grid,
@@ -17,6 +19,9 @@ const useStyles = makeStyles((theme) =>
     },
     divider: {
       margin: theme.spacing(1, 0),
+    },
+    companyContainer: {
+      display: 'flex',
     },
   })
 );
@@ -36,10 +41,22 @@ export const LeftColumn = () => {
       </Typography>
       {resume.work_experiences.map((work) => (
         <Grid key={work.company.name} justify='space-between' container>
-          <Typography component='span'>{work.company.name} </Typography>
-          <Typography component='span'>
-            {work.company.startAt + ' ~ ' + work.company.endAt}
-          </Typography>
+          <Card elevation={0}>
+            {/* will add link to resume workexperience */}
+            {/* <CardActionArea onClick={() => console.log('??????????')}> */}
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h2'>
+                {work.company.name}
+              </Typography>
+              <Typography variant='body1' color='textPrimary' component='p'>
+                {work.company.title}
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                {work.company.startAt + ' ~ ' + work.company.endAt}
+              </Typography>
+            </CardContent>
+            {/* </CardActionArea> */}
+          </Card>
         </Grid>
       ))}
       <Divider className={classes.divider} />
@@ -48,10 +65,24 @@ export const LeftColumn = () => {
       </Typography>
       {resume.educations.map((edu) => (
         <Grid key={edu.school.name} justify='space-between' container>
-          <Typography component='span'>{edu.school.name} </Typography>
-          <Typography component='span'>
-            {edu.school.startAt + ' ~ ' + edu.school.endAt}
-          </Typography>
+          <Card elevation={0}>
+            {/* will add link to resume education */}
+            {/* <CardActionArea onClick={() => console.log('??????????')}> */}
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h2'>
+                {edu.school.name}
+              </Typography>
+              <Typography variant='body1' color='textPrimary' component='p'>
+                {edu.school.description}
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                {edu.school.startAt ?? ''}
+                {edu.school.startAt ? ' ~ ' : ''}
+                {edu.school.endAt ?? 'present'}
+              </Typography>
+            </CardContent>
+            {/* </CardActionArea> */}
+          </Card>
         </Grid>
       ))}
       <Divider className={classes.divider} />
